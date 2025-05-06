@@ -4,9 +4,9 @@ from .database import engine
 
 app = FastAPI()
 
-# Инициализация БД
+# Создаем таблицы при старте приложения
 Base.metadata.create_all(bind=engine)
 
 @app.get("/")
 def read_root():
-    return {"message": "Stress Detection API"}
+    return {"message": "Таблицы успешно созданы!"}
